@@ -15,11 +15,12 @@ export function gaussian(nbPoints: number, options: Options = {}): number[] {
     .fill(-width / 2)
     .map((value, index) => value + index / (nbPoints - 1));
   for (let point of domain) {
-    if (point >= center - 0.5 * width && point <= center) {
-      result.push((2 * height * (point - center)) / width + height);
-    } else if (point > center && point <= center + 0.5 * width) {
-      result.push((-2 * height * (point - center)) / width + height);
-    }
+    result.push(
+      height *
+        (2 / width) *
+        Math.sqrt(Math.log(2) / Math.PI) *
+        Math.exp(-Math.log(2) * Math.pow((point - center) / (0.5 * width), 2)),
+    );
   }
   return result;
 }
