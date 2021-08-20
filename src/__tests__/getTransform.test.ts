@@ -1,4 +1,8 @@
+import { toBeDeepCloseTo } from 'jest-matcher-deep-close-to';
+
 import { getTransform } from '../getTransform';
+
+expect.extend({ toBeDeepCloseTo });
 
 describe('Testing basis functions', () => {
   it('Triaungular', () => {
@@ -8,7 +12,7 @@ describe('Testing basis functions', () => {
     ];
     const transform = getTransform(input);
 
-    expect(transform).toStrictEqual([
+    expect(transform).toBeDeepCloseTo([
       0.136986301369863, 0.24657534246575336, 0.36986301369863017,
       0.4931506849315069, 0.6164383561643834, 0.7397260273972601,
       0.8630136986301368, 0.9589041095890409, 1, 0.9589041095890409,
