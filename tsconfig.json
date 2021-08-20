@@ -6,5 +6,6 @@
     "strict": true,
     "target": "es2020"
   },
+
   "include": ["./src/**/*", "src/types/Basis.ts"]
 }
