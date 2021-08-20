@@ -1,34 +1,56 @@
-# integral-transform
+# integral-transforms
 
 [![NPM version][npm-image]][npm-url]
 [![build status][ci-image]][ci-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
 
-Line broadening through integral transform.
+<p align="center">
+  <img src="image/readme.png">
+</p>
+<p align="center">
+  A tool for line broadening through integral transforms.
+</p>
 
 ## Installation
 
-`$ npm i integral-transform`
+`$ npm i integral-transforms`
 
 ## Usage
 
 ```js
-import { myModule } from 'integral-transform';
+import { getTransform } from 'integral-transforms';
 
-const result = myModule(args);
-// result is ...
+const signal = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.4, 0.3, 0.2, 0.1, 0];
+
+const broadedSignal = getTransform(signal, { kernelLength: 7 });
+// [0.04, 0.12, 0.24, 0.53, 0.80, 1, 0.80, 0.53, 0.24, 0.12,0.04]
 ```
 
+**Arguments**
+
+* `array`: Matrix containing the inputs.
+
+**Options**
+
+* `shape`: Define the shape of the kernel (default: 'triangular').
+* `kernelLength`: Set up the length of the kernel to perform the convolution (default: 7).
+
+
+|         Shapes      |         Status      |
+|---------------------|---------------------|
+| Triangular          ||
+| Gaussian            ||
+| Lorentzian          ||
 ## License
 
 [MIT](./LICENSE)
 
-[npm-image]: https://img.shields.io/npm/v/integral-transform.svg
-[npm-url]: https://www.npmjs.com/package/integral-transform
-[ci-image]: https://github.com/josoriom/integral-transform/workflows/Node.js%20CI/badge.svg?branch=main
-[ci-url]: https://github.com/josoriom/integral-transform/actions?query=workflow%3A%22Node.js+CI%22
-[codecov-image]: https://img.shields.io/codecov/c/github/josoriom/integral-transform.svg
-[codecov-url]: https://codecov.io/gh/josoriom/integral-transform
-[download-image]: https://img.shields.io/npm/dm/integral-transform.svg
-[download-url]: https://www.npmjs.com/package/integral-transform
+[npm-image]: https://img.shields.io/npm/v/integral-transforms.svg
+[npm-url]: https://www.npmjs.com/package/integral-transforms
+[ci-image]: https://github.com/josoriom/integral-transforms/workflows/Node.js%20CI/badge.svg?branch=main
+[ci-url]: https://github.com/josoriom/integral-transforms/actions?query=workflow%3A%22Node.js+CI%22
+[codecov-image]: https://img.shields.io/codecov/c/github/josoriom/integral-transforms.svg
+[codecov-url]: https://codecov.io/gh/josoriom/integral-transforms
+[download-image]: https://img.shields.io/npm/dm/integral-transforms.svg
+[download-url]: https://www.npmjs.com/package/integral-transforms

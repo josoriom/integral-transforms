@@ -1,7 +1,7 @@
 {
-  "name": "integral-transform",
+  "name": "integral-transforms",
   "version": "0.0.0",
-  "description": "Line broadening through integral transform",
+  "description": "Line broadening through integral transforms",
   "main": "./lib/index.js",
   "module": "./lib-esm/index.js",
   "types": "./lib/index.d.ts",
@@ -14,6 +14,7 @@
     "lib-esm"
   ],
   "scripts": {
+    "build": "npm run tsc && cheminfo-build",
     "check-types": "tsc --noEmit",
     "clean": "rimraf lib lib-esm",
     "eslint": "eslint src --cache",
@@ -30,24 +31,29 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/josoriom/integral-transform.git"
+    "url": "git+https://github.com/josoriom/integral-transforms.git"
   },
   "bugs": {
-    "url": "https://github.com/josoriom/integral-transform/issues"
+    "url": "https://github.com/josoriom/integral-transforms/issues"
   },
-  "homepage": "https://github.com/josoriom/integral-transform#readme",
+  "homepage": "https://github.com/josoriom/integral-transforms#readme",
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.1",
     "eslint": "^7.32.0",
     "eslint-config-cheminfo-typescript": "^8.0.9",
     "jest": "^27.0.6",
+    "jest-matcher-deep-close-to": "^2.0.1",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
-    "ts-jest": "^27.0.4",
+    "ts-jest": "^27.0.5",
     "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "ml-array-max": "^1.2.3",
+    "ml-convolution": "^2.0.0"
   }
 }

@@ -1,10 +1,10 @@
 export interface Basis {
   [key: string]: (
-    point: number,
+    nbPoints: number,
     options?: {
       width: number;
       height: number;
       center: number;
     },
-  ) => number;
+  ) => number[];
 }

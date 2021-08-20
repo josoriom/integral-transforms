@@ -8,7 +8,7 @@
  * @return ;
  */
 
-export function triangular(nbPoints: number, options: Options = {}): number[] {
+export function gaussian(nbPoints: number, options: Options = {}): number[] {
   const { center = 0, width = 1, height = 1 } = options;
   let result = [];
   let domain = new Array(nbPoints)
