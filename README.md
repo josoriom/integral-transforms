@@ -36,19 +36,21 @@ const broadedSignal = getTransform(signal, { kernelLength: 7 });
 * `shape`: Define the shape of the kernel (default: 'triangular').
 * `kernelLength`: Set up the length of the kernel to perform the convolution (default: 7).
 
+**Shapes**
 
-|         Shapes      |         Status      |
+|         Shape      |         Status      |
 |---------------------|---------------------|
 | Triangular          ||
 | Gaussian            ||
 | Lorentzian          ||
+
 ## License
 
 [MIT](./LICENSE)
 
 [npm-image]: https://img.shields.io/npm/v/integral-transforms.svg
 [npm-url]: https://www.npmjs.com/package/integral-transforms
-[ci-image]: https://github.com/josoriom/integral-transforms/workflows/Node.js%20CI/badge.svg?branch=main
+[ci-image]: https://github.com/josoriom/integral-transforms/workflows/Node.js%20CI/badge.svg?branch=master
 [ci-url]: https://github.com/josoriom/integral-transforms/actions?query=workflow%3A%22Node.js+CI%22
 [codecov-image]: https://img.shields.io/codecov/c/github/josoriom/integral-transforms.svg
 [codecov-url]: https://codecov.io/gh/josoriom/integral-transforms
