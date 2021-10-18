@@ -38,11 +38,9 @@ const broadedSignal = getTransform(signal, { kernelLength: 7 });
 
 **Shapes**
 
-|         Shape      |         Status      |
-|---------------------|---------------------|
-| Triangular          ||
-| Gaussian            ||
-| Lorentzian          ||
+* Triangular
+* Gaussian
+* Lorentzian
 
 ## License
 
