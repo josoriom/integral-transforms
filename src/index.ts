@@ -1,1 +1,1 @@
-export { getTransform } from './getTransform';
+export { getbroadenedSpectrum } from './getbroadenedSpectrum';

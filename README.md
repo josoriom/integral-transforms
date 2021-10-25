@@ -19,11 +19,11 @@
 ## Usage
 
 ```js
-import { getTransform } from 'integral-transforms';
+import { getbroadenedSpectrum } from 'integral-transforms';
 
 const signal = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.4, 0.3, 0.2, 0.1, 0];
 
-const broadedSignal = getTransform(signal, { kernelLength: 7 });
+const broadedSignal = getbroadenedSpectrum(signal, { kernelWidth: 7 });
 // [0.04, 0.12, 0.24, 0.53, 0.80, 1, 0.80, 0.53, 0.24, 0.12,0.04]
 ```
 
@@ -34,7 +34,7 @@ const broadedSignal = getTransform(signal, { kernelLength: 7 });
 **Options**
 
 * `shape`: Define the shape of the kernel (default: 'triangular').
-* `kernelLength`: Set up the length of the kernel to perform the convolution (default: 7).
+* `kernelWidth`: Set up the length of the kernel to perform the convolution (default: 7).
 
 **Shapes**
 

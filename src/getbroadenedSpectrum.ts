@@ -3,10 +3,11 @@ import { BorderType, fftConvolution } from 'ml-convolution';
 import { basis } from './utilities/basis';
 import { yNorm } from './utilities/yNorm';
 
-export function getTransform(array: number[], options: Options = {}) {
+export function getbroadenedSpectrum(array: number[], options: Options = {}) {
   const {
     shape = 'triangular',
-    kernelLength = 7,
+    kernelWidth = 7,
+    normalized = false,
     shapeOptions = {
       width: 1,
       height: 1,
@@ -14,15 +15,15 @@ export function getTransform(array: number[], options: Options = {}) {
     },
   } = options;
   const kernelBasis = basis[shape];
-  const kernel = kernelBasis(kernelLength, shapeOptions);
+  const kernel = kernelBasis(kernelWidth, shapeOptions);
   const result = fftConvolution(array, kernel, 'CONSTANT' as BorderType);
-  return yNorm(result);
+  return normalized ? yNorm(result) : result;
 }
 
 interface Options {
   shape?: string;
-  kernelLength?: number;
-  nbPoints?: number;
+  kernelWidth?: number;
+  normalized?: boolean;
   shapeOptions?: {
     width: number;
     height: number;
